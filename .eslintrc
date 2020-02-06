@@ -21,6 +21,7 @@
     "sort-keys": "off",
     "react/jsx-fragments": "off",
     "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
     "jsx-a11y/label-has-for": [
       2,
       {

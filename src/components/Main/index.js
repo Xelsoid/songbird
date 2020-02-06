@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default () => {
-  return(
+const Main = () => (
+  <main>
     <h2>Hello main!</h2>
-  )
-}
+  </main>
+);
+
+export default Main;

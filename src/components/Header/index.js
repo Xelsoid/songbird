@@ -1,7 +1,12 @@
 import React from 'react';
+import Logo from '@components/Logo';
 
-export default () => {
-  return(
-    <h2>Hello header!</h2>
-  )
-}
+// import 'index.scss';
+
+const Header = () => (
+  <header className="pt-4">
+    <Logo />
+  </header>
+);
+
+export default Header;
