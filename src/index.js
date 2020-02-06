@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Application from '@components/Application';
 
 class App extends React.PureComponent {
   render() {
     return (
-      <h1>Hello birds!</h1>
+      <Application/>
     );
   }
 }
