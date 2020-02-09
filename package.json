@@ -63,6 +63,7 @@
   "_moduleAliases": {
     "@root": ".",
     "@components": "src/components",
+    "@data": "src/mockedData",
     "@images": "src/images",
     "fileRoots": "src/foo"
   }
