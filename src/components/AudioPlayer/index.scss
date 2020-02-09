@@ -1,0 +1,15 @@
+.rhap_container {
+  min-width: auto;
+  background-color: #303030;
+  box-shadow: none;
+
+  svg {  //override bootstrap styles
+    overflow: inherit;
+    vertical-align: inherit;
+  }
+}
+
+.rhap_time {
+  color: #fff;
+}
+

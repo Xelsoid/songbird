@@ -8,10 +8,10 @@ import MainMenu from '@components/MainMenu';
 const Header = () => (
   <header className="pt-2">
     <div className="d-flex justify-content-between align-items-center">
-      <Logo/>
-      <Score score="2"/>
+      <Logo />
+      <Score score="2" />
     </div>
-    <MainMenu/>
+    <MainMenu />
   </header>
 );
 

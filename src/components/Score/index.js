@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Score = ({score}) => (
+const Score = ({ score }) => (
   <div className="score h5">
-    Score: {score}
+    Score:
+    {' '}
+    {score}
   </div>
 );
 

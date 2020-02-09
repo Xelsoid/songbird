@@ -1,8 +1,9 @@
 import React from 'react';
+import RandomBird from '@components/RandomBird';
 
 const Main = () => (
   <main>
-    <h2>Hello main!</h2>
+    <RandomBird />
   </main>
 );
 
