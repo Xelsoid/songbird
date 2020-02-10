@@ -1,18 +1,18 @@
 import React from 'react';
-import RandomBird from '@components/Bird';
-import BirdsChooser from "@components/BirdChooser";
-import BirdChoosen from "@components/BirdResult";
+import RandomBird from '@components/QuestionBlock';
+import AnswerChooser from "@components/AnswerChooser";
+import AnswerResult from "@components/AnswerResult";
 import Button from "@components/Button";
 
-const Main = (data) => (
+const Main = ({data}) => (
   <main className="py-2 mb-2">
     <RandomBird data={data}/>
     <div className="row mt-4">
       <div className="col-md-4">
-        <BirdsChooser/>
+        <AnswerChooser currentRoundData={data[0]}/>
       </div>
       <div className="col-md-8">
-        <BirdChoosen/>
+        <AnswerResult/>
       </div>
     </div>
     <div className="my-4">
