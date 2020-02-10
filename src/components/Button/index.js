@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import './index.scss';
+import "./index.scss";
 
-const Button = () => (
-  <button className="btn">
+const Button = ({ isRoundCompleted }) => (
+  <button className="btn" disabled={!isRoundCompleted}>
     Next
   </button>
 );

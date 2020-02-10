@@ -7,4 +7,12 @@
     background-color: #008966;
     color: #fff;
   }
+
+  &:disabled {
+    background-color: #303030;
+
+    &:hover {
+      background-color: #303030;
+    }
+  }
 }

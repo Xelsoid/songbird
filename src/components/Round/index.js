@@ -1,27 +1,25 @@
-import React from 'react';
-import './index.scss';
+import React from "react";
+import propTypes from "prop-types";
+import "./index.scss";
 
-const Round = () => (
+const Round = ({ data, roundId }) => (
   <ul className="rounds rounded-lg d-flex flex-column flex-md-row flex-md-wrap">
-    <li className="p-2 p-md-3 text-center flex-grow-1" >
-      Птичка Птичка
-    </li>
-    <li className="p-2 p-md-3 text-center flex-grow-1 rounds--item__active">
-      Птичка Птичка
-    </li>
-    <li className="p-2 p-md-3 text-center flex-grow-1">
-      Птичка Птичка
-    </li>
-    <li className="p-2 p-md-3 text-center flex-grow-1">
-      Птичка Птичка
-    </li>
-    <li className="p-2 p-md-3 text-center flex-grow-1">
-      Птичка Птичка
-    </li>
-    <li className="p-2 p-md-3 text-center flex-grow-1">
-      Птичка Птичка
-    </li>
+    {data.map(round => (
+      <li
+        key={round.round}
+        className={`${
+          roundId === round.round ? "rounds--item__active" : ""
+        } p-2 p-md-3 text-center flex-grow-1`}
+      >
+        {round.roundTitle}
+      </li>
+    ))}
   </ul>
 );
+
+Round.propTypes = {
+  activeRound: propTypes.number,
+  data: propTypes.array
+};
 
 export default Round;

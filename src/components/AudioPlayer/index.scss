@@ -1,4 +1,4 @@
-.rhap{
+.rhap {
   &_container {
     min-width: auto;
     background-color: #303030;
@@ -6,7 +6,8 @@
     padding-right: 0;
     padding-left: 0;
 
-    svg {  //override bootstrap styles
+    svg {
+      //override bootstrap styles
       overflow: inherit;
       vertical-align: inherit;
 
@@ -14,7 +15,7 @@
         fill: #00bc8c;
       }
 
-      &:hover path{
+      &:hover path {
         fill: #008966;
       }
     }
@@ -38,12 +39,11 @@
     top: 20px;
   }
 
-  &_current-time{
+  &_current-time {
     left: 0;
   }
 
-  &_total-time{
+  &_total-time {
     right: 0;
   }
 }
-
