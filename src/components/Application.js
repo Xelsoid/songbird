@@ -9,21 +9,32 @@ class Application extends React.Component {
   state = {
     data,
     score: 0,
-    roundId: 0
+    roundId: 0,
+    roundsAmount: data.length - 1,
   };
 
-  // press = () => {
-  //   const className = (this.state.class==="off")?"on":"off";
-  //   const label = (this.state.label === 'Нажми')?'нажми еще раз?':'Нажми';
-  //   this.setState({class: className, label});
-  // };
+  collectAndSetRoundData = (roundScore) => {
+    const {score, roundId, roundsAmount} = this.state;
+    if(roundId <= roundsAmount) {
+      this.setState({
+        roundId: roundId + 1
+      });
+    }
+    this.setState({
+      score: score + roundScore
+    });
+  };
 
   render() {
     const { score, data, roundId } = this.state;
     return (
       <div className="main-wrapper container">
         <Header score={score} data={data} roundId={roundId} />
-        <Main roundData={data[roundId].roundData} />
+        <Main
+          roundData={data[roundId].roundData}
+          roundScore={data[roundId].roundData.length}
+          collectAndSetRoundData={this.collectAndSetRoundData}
+        />
       </div>
     );
   }

@@ -4,9 +4,10 @@ import "react-h5-audio-player/src/styles.scss";
 
 import "./index.scss";
 
-const AudioPlayer = ({ audio, autoPlay }) => (
+const AudioPlayer = ({ audio, autoPlayAfterSrcChange }) => (
   <Player
-    autoPlay={autoPlay}
+    autoPlay={false}
+    autoPlayAfterSrcChange={autoPlayAfterSrcChange}
     src={
       audio ||
       "https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3"

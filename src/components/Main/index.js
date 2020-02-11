@@ -10,7 +10,6 @@ const getRandomValue = maxValue => {
 
 class Main extends React.Component {
   state = {
-    roundData: this.props.roundData,
     answerId: getRandomValue(this.props.roundData.length),
     isRoundCompleted: false,
     roundScore: 6,
@@ -41,15 +40,22 @@ class Main extends React.Component {
     }
   }
 
+  finishTheRound = () => {
+    const {collectAndSetRoundData} = this.props;
+    const {roundScore} = this.state;
+    collectAndSetRoundData(roundScore);
+  };
+
   render() {
-    const {roundData, answerId, isRoundCompleted, answerOptionChosen} = this.state;
+    const {answerId, isRoundCompleted, answerOptionChosen} = this.state;
+    const {collectAndSetRoundData, roundData} = this.props;
     return (
       <main className="py-2 mb-2">
         <QuestionBlock
           audio={roundData[answerId].audio}
           image={isRoundCompleted ? roundData[answerId].image : ''}
           name={isRoundCompleted ? roundData[answerId].name : ''}
-          autoPlay={false}
+          autoPlayAfterSrcChange={false}
         />
         <div className="row mt-4">
           <div className="col-md-4">
@@ -68,7 +74,7 @@ class Main extends React.Component {
                 name={roundData[answerOptionChosen].name}
                 species={roundData[answerOptionChosen].species}
                 description={roundData[answerOptionChosen].description}
-                autoPlay={false}
+                autoPlayAfterSrcChange={false}
               />
             ) : (
               <div className="question-container p-3 rounded-lg">
@@ -80,7 +86,10 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="my-4">
-          <Button isRoundCompleted={isRoundCompleted} />
+          <Button
+            isRoundCompleted={isRoundCompleted}
+            buttonOnClickCallback={this.finishTheRound}
+          />
         </div>
       </main>
     );

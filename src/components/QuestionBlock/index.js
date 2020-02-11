@@ -11,7 +11,7 @@ const QuestionBlock = ({
   name,
   species,
   description,
-  autoPlay
+  autoPlayAfterSrcChange
 }) => (
   <div className="question-container p-4 rounded-lg">
     <div className="d-flex flex-column flex-md-row align-items-center align-items-md-start">
@@ -26,7 +26,7 @@ const QuestionBlock = ({
         {species ? (
           <p className="h3 border-bottom text-center text-md-left">{species}</p>
         ) : null}
-        <AudioPlayer audio={audio} autoPlay={autoPlay} />
+        <AudioPlayer audio={audio} autoPlayAfterSrcChange={autoPlayAfterSrcChange} />
       </div>
     </div>
     {description ? <p className="w-100 px-4 py-2">{description}</p> : null}
