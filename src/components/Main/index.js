@@ -3,32 +3,28 @@ import QuestionBlock from "@components/QuestionBlock";
 import AnswerList from "@components/AnswerList";
 import Button from "@components/Button";
 
-const getRandomValue = maxValue => {
-  const rand = Math.random() * (maxValue - 1);
-  return Math.round(rand);
-};
+
 
 class Main extends React.Component {
   state = {
-    answerId: getRandomValue(this.props.roundData.length),
-    isRoundCompleted: false,
-    roundScore: 6,
+    roundScore: this.props.roundScore,
+    isRoundCompleted: this.props.isRoundCompleted,
     answerOptionChosen: "",
   };
 
-
   checkTheAnswer = (e, state) => {
-    const { answerId } = this.state;
+    const { answerId } = this.props;
     const currentValue = e.target.value - 1;
     const isAnswerCorrect = currentValue === answerId;
 
     this.setState({ answerOptionChosen: currentValue });
 
     if (isAnswerCorrect) {
-      this.setState({ isRoundCompleted: true });
+      this.setState({
+        isRoundCompleted: true
+      })
     }
 
-    // this.setAnswerParams(currentValue);
     this.countScore(state, isAnswerCorrect);
   };
 
@@ -47,8 +43,8 @@ class Main extends React.Component {
   };
 
   render() {
-    const {answerId, isRoundCompleted, answerOptionChosen} = this.state;
-    const {collectAndSetRoundData, roundData} = this.props;
+    const {answerOptionChosen, isRoundCompleted} = this.state;
+    const {answerId, roundData } = this.props;
     return (
       <main className="py-2 mb-2">
         <QuestionBlock

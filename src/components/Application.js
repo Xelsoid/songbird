@@ -25,6 +25,11 @@ class Application extends React.Component {
     });
   };
 
+  getRandomValue = (maxValue) => {
+    const rand = Math.random() * (maxValue - 1);
+    return Math.round(rand);
+  };
+
   render() {
     const { score, data, roundId } = this.state;
     return (
@@ -34,6 +39,7 @@ class Application extends React.Component {
           roundData={data[roundId].roundData}
           roundScore={data[roundId].roundData.length}
           collectAndSetRoundData={this.collectAndSetRoundData}
+          answerId={this.getRandomValue(data[roundId].roundData.length)}
         />
       </div>
     );
