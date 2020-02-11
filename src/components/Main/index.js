@@ -38,7 +38,8 @@ class Main extends React.Component {
 
   finishTheRound = () => {
     const {collectAndSetRoundData} = this.props;
-    const {roundScore} = this.state;
+    const {roundScore, isRoundCompleted} = this.state;
+    this.setState({isRoundCompleted: false})
     collectAndSetRoundData(roundScore);
   };
 
