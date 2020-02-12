@@ -1,11 +1,11 @@
 {
   "name": "songbird",
   "version": "1.0.0",
-  "description": "RS sonbird",
+  "description": "RS songbird",
   "main": "index.js",
   "scripts": {
-    "development": "set NODE_ENV=development&& node server.js",
-    "production": "set NODE_ENV=production&& webpack",
+    "development": "cross-env NODE_ENV=development node server.js",
+    "production": "cross-env NODE_ENV=production webpack",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
@@ -26,6 +26,7 @@
     "@babel/preset-react": "7.8.3",
     "babel-eslint": "10.0.3",
     "babel-loader": "8.0.5",
+    "cross-env": "7.0.0",
     "css-loader": "3.4.2",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.0.1",
@@ -45,8 +46,8 @@
     "react": "16.12.0",
     "react-dev-tools": "0.0.1",
     "react-dom": "16.12.0",
-    "react-hot-loader": "4.12.19",
     "react-h5-audio-player": "2.3.1",
+    "react-hot-loader": "4.12.19",
     "react-redux": "7.1.3",
     "redux": "4.0.5",
     "sass-loader": "8.0.2",
@@ -58,7 +59,10 @@
     "webpack-hot-middleware": "2.25.0",
     "webpack-merge": "4.2.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "production": "0.0.2",
+    "run": "^1.4.0"
+  },
   "_moduleAliases": {
     "@root": ".",
     "@components": "src/components",
