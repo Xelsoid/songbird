@@ -2,8 +2,8 @@ import React from "react";
 
 import "./index.scss";
 
-const Button = ({ isRoundCompleted, buttonOnClickCallback }) => (
-  <button className="btn" disabled={!isRoundCompleted} onClick={buttonOnClickCallback}>
+const Button = ({ disabled, buttonOnClickCallback }) => (
+  <button className="btn" disabled={disabled} onClick={buttonOnClickCallback}>
     Next
   </button>
 );
