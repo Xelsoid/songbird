@@ -51,7 +51,8 @@ class Application extends React.Component {
         isRoundCompleted: false,
         roundId: roundId + 1,
         incorrectCheckedOptions: [],
-        correctAnswer: null
+        correctAnswer: null,
+        answerOptionChosen: null
       })
     }
     if(roundId){
