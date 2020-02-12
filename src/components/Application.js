@@ -40,10 +40,6 @@ class Application extends React.Component {
       null;
   };
 
-  fire = (e) => {
-    this.setState({roundId: 1, isRoundCompleted: true})
-  };
-
   resetTheState = () => {
     this.setState(initialState);
   };
@@ -70,7 +66,6 @@ class Application extends React.Component {
     const { score, data, roundId, isRoundCompleted, answerOptionChosen, isGameFinished, incorrectCheckedOptions, correctAnswer } = this.state;
     return (
       <div className="main-wrapper container">
-        <button onClick={this.fire}>fire</button>
         <Header score={score} data={data} roundId={roundId} />
         <Main
           roundData={data[roundId].roundData}
