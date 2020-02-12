@@ -6,7 +6,7 @@ import VictoryBlock from "@components/VictoryBlock";
 
 class Main extends React.Component {
   render() {
-    const {answerId, roundData, isRoundCompleted, answerOnclickCallback, resetTheRound, answerOptionChosen, isGameFinished, score, resetTheStateCallback} = this.props;
+    const {answerId, roundData, isRoundCompleted, answerOnclickCallback, resetTheRound, answerOptionChosen, isGameFinished, score, resetTheStateCallback, incorrectCheckedOptions,correctAnswer} = this.props;
     return (
       <main className="py-2 mb-2">
         {!isGameFinished ?
@@ -23,6 +23,8 @@ class Main extends React.Component {
                   currentRoundData={roundData}
                   answerId={answerId}
                   answerOnclickCallback={answerOnclickCallback}
+                  incorrectCheckedOptions={incorrectCheckedOptions}
+                  correctAnswer={correctAnswer}
                 />
               </div>
               <div className="col-md-8">

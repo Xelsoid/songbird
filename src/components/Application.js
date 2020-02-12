@@ -19,18 +19,20 @@ const initialState = {
   incorrectCheckedOptions: [],
   answerOptionChosen: null,
   isGameFinished: false,
+  correctAnswer: null,
 };
 
 class Application extends React.Component {
   state = initialState;
 
-  answerOnclickCallback = (id, isAnswerCorrect) => {
+  answerOnclickCallback = (id, answerId) => {
     const {incorrectCheckedOptions, isRoundCompleted} = this.state;
+    const isAnswerCorrect = id === answerId;
 
     this.setState({answerOptionChosen: id});
 
     isAnswerCorrect && !isRoundCompleted ?
-      this.setState({isRoundCompleted: true}) :
+      this.setState({isRoundCompleted: true, correctAnswer: id}) :
       null;
 
     !isAnswerCorrect && !isRoundCompleted && !incorrectCheckedOptions.includes(id) ?
@@ -52,7 +54,8 @@ class Application extends React.Component {
       this.setState({
         isRoundCompleted: false,
         roundId: roundId + 1,
-        incorrectCheckedOptions: []
+        incorrectCheckedOptions: [],
+        correctAnswer: null
       })
     }
     if(roundId){
@@ -64,7 +67,7 @@ class Application extends React.Component {
   };
 
   render() {
-    const { score, data, roundId, isRoundCompleted, answerOptionChosen, isGameFinished } = this.state;
+    const { score, data, roundId, isRoundCompleted, answerOptionChosen, isGameFinished, incorrectCheckedOptions, correctAnswer } = this.state;
     return (
       <div className="main-wrapper container">
         <button onClick={this.fire}>fire</button>
@@ -80,6 +83,8 @@ class Application extends React.Component {
           isGameFinished={isGameFinished}
           score={score}
           resetTheStateCallback={this.resetTheState}
+          incorrectCheckedOptions={incorrectCheckedOptions}
+          correctAnswer={correctAnswer}
         />
       </div>
     );
