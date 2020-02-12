@@ -11,8 +11,5 @@ module.exports = () => {
       filename: 'main.min.js',
       path: path.resolve(__dirname, '../production')
     },
-    optimization: {
-      minimizer: [new UglifyJsPlugin()],
-    },
   }
 };
