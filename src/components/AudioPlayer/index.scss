@@ -1,0 +1,49 @@
+.rhap {
+  &_container {
+    min-width: auto;
+    background-color: #303030;
+    box-shadow: none;
+    padding-right: 0;
+    padding-left: 0;
+
+    svg {
+      //override bootstrap styles
+      overflow: inherit;
+      vertical-align: inherit;
+
+      path {
+        fill: #00bc8c;
+      }
+
+      &:hover path {
+        fill: #008966;
+      }
+    }
+  }
+
+  &_progress-section {
+    position: relative;
+  }
+
+  &_progress-container {
+    margin: 0;
+  }
+
+  &_main-controls {
+    margin-left: 24px;
+  }
+
+  &_time {
+    color: #fff;
+    position: absolute;
+    top: 20px;
+  }
+
+  &_current-time {
+    left: 0;
+  }
+
+  &_total-time {
+    right: 0;
+  }
+}

@@ -1,0 +1,18 @@
+.btn {
+  background-color: #00bc8c;
+  width: 100%;
+  color: #fff;
+
+  &:hover {
+    background-color: #008966;
+    color: #fff;
+  }
+
+  &:disabled {
+    background-color: #303030;
+
+    &:hover {
+      background-color: #303030;
+    }
+  }
+}

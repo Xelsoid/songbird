@@ -2,10 +2,13 @@
   "extends": [
     "airbnb",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
   ],
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -21,6 +24,7 @@
     "sort-keys": "off",
     "react/jsx-fragments": "off",
     "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
     "jsx-a11y/label-has-for": [
       2,
       {
